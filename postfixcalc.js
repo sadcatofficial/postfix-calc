@@ -39,14 +39,14 @@ function reversePolish(newExpr) {
 
 
 
-function toPostfix (infix) {
+function toPostfix(infix) {
   var s = [],
     p = {
       '+': 2, '-': 2,
       '/': 3, '*': 3,
       '^': 4
     }, t2;
-  return infix.split(' ').reduce(function(o, t) {
+  return infix.split(' ').reduce(function (o, t) {
     if (!isNaN(t)) o += t + ' ';
     else if (p[t]) {
       while ((t2 = s[s.length - 1]) && (t != '^' && p[t] <= p[t2] || p[t] < p[t2]))
@@ -58,19 +58,36 @@ function toPostfix (infix) {
       while (s[s.length - 1] != '(') o += s.pop() + ' ';
       s.pop();
     }
-    return o ;
+    return o;
   }, '') + s.reverse().join(' ');
 }
 
-console.log('123')
+formatString = (str) => {
+  str = str.split('');
+  str = str.map((element) => {
+    if (element === '+') return ' + ';
+    if (element === '-') return ' - ';
+    if (element === '/') return ' / ';
+    if (element === '*') return ' * ';
+    if (element === '^') return ' ^ ';
+    if (element === '(') return '( ';
+    if (element === ')') return ' )';
+    if (true) return element;
+  })
+
+  return str.join('')
+}
+
+
 
 input = document.querySelector('.main-input');
 
 button = document.querySelector('.main-button').addEventListener('click',(ev)=>{
   ev.preventDefault();
-  document.querySelector('.answer-field').innerHTML = `<a> ${reversePolish(toPostfix(input.value))}  </a>`;
+  document.querySelector('.answer-field').innerHTML = `<a> ${reversePolish(toPostfix(formatString(input.value)))}  </a>`;
+  // document.querySelector('.answer-field').innerHTML = `<a> ${reversePolish(toPostfix(input.value))}  </a>`;
   console.log(input.value)
-  
+
 
 });
 
