@@ -1,0 +1,61 @@
+.main-container {
+  margin: auto;
+  margin-top: 100px;
+  width: 1000px;
+  height: 500px;
+
+  background: rgb(99, 118, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(99, 118, 214, 1) 5%,
+    rgba(159, 31, 163, 1) 50%,
+    rgba(228, 120, 142, 1) 88%
+  );
+
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 6px 8px 4px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 0px 6px 8px 4px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 6px 8px 4px rgba(0, 0, 0, 0.46);
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+  height: 50%;
+  justify-content: space-evenly;
+}
+
+.answer-field {
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  background-color: rgb(235, 235, 235);
+  height: 100px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: fantasy;
+}
+
+.main-button {
+  border-radius: 20px;
+  border: white solid;
+  cursor: pointer;
+  width: 50%;
+  margin: auto;
+  align-content: center;
+
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(110, 168, 255, 0.75);
+  -moz-box-shadow: 0px 0px 17px 0px rgba(110, 168, 255, 0.75);
+  box-shadow: 0px 0px 17px 0px rgba(110, 168, 255, 0.75);
+}
