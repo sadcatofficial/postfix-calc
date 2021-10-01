@@ -80,17 +80,33 @@ formatString = (str) => {
 
 
 
-input = document.querySelector('.main-input');
+let input = document.querySelector('.main-input');
+let boardToggleButton = document.querySelector('.toggle-board');
+let boardBody = document.querySelector('.board-body');
 
-button = document.querySelector('.main-button').addEventListener('click',(ev)=>{
+
+document.querySelector('.main-button').addEventListener('click',(ev)=>{
   ev.preventDefault();
   document.querySelector('.answer-field').innerHTML = `<a> ${reversePolish(toPostfix(formatString(input.value)))}  </a>`;
   // document.querySelector('.answer-field').innerHTML = `<a> ${reversePolish(toPostfix(input.value))}  </a>`;
-  console.log(input.value)
+  console.log(toPostfix(formatString(input.value)))
 
 
 });
 
+boardToggleButton.addEventListener('click',(ev)=>{
+  ev.preventDefault(); 
+  boardBody.classList.toggle('d-none')
+})
+
+boardBody.addEventListener('click',(ev)=>{
+  if(ev.target.id != 'clear-button')
+  input.value+=ev.target.innerText;
+  else input.value = '';
+
+ 
+
+})
 // let inputString = '22 / 11 + ( 2 + 31 ) * 3';
 // console.log(toPostfix(inputString))
 // console.log(reversePolish(toPostfix(inputString)));

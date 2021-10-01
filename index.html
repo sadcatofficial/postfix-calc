@@ -18,15 +18,55 @@
         <form action="" class="main-form">
 
             <input class="main-input" type="text" name='calc-before'>
-            <button class="main-button" type="submit" > Calculate </button>
+            <button class="main-button" type="submit"> Calculate </button>
             <!-- <input type="text" name='calc-after'> -->
-            <div class="answer-field">
-           
-            </div>
-
+            <div class="answer-field"> </div>
         </form>
     </div>
+    <div class="board">
+        <button class="toggle-board">Toggle Keyboard</button>
+        <div class="board-body d-none">
+            <div class="numbers">
+                <div class="board-row">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+                <div class="board-row">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                </div>
+                <div class="board-row">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
 
+            </div>
+            <div class="operations">
+                <div class="board-row">
+                <button>+</button>
+                <button>-</button>
+            </div>
+
+            <div class="board-row">
+                <button>(</button>
+                <button>)</button>
+            </div>
+            <div class="board-row">
+                <button>*</button>
+                <button>/</button>
+                <button>^</button>
+            </div></div>
+           
+            
+            <div class="board-row">
+                <button id="clear-button" >clear</button>
+            </div>
+
+        </div>
+    </div>
 </body>
 <script src="postfixcalc.js"></script>
 
